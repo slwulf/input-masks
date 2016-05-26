@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Input Masks</title>
+  <style>
+  body { font-family: sans-serif; font-size: 12px; }
+  label { display: block; margin-bottom: 5px; font-size: .9em; color: #666; }
+  input { padding: .25em .4em; font-size: 1.1em;  }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <label for="test_field">
+      Social Security Number:
+    </label>
+
+    <input type="text" id="test_field" name="test_field">
+
+  </div>
+
+  <script src="dist/input-masks.js"></script>
+  <script>
+  (function() {
+    inputMask(document.getElementById('test_field'), {
+
+      /**
+       * mask
+       *
+       * Defines the format of the mask.
+       * Built-in identifiers:
+       *   #: [0-9]
+       *   a: [A-Za-z]
+       */
+
+      mask: '###-##-####',
+
+      /**
+       * placeholder
+       *
+       * A value to be displayed when the
+       * field is in focus. Defaults to the
+       * mask string.
+       */
+
+      placeholder: '___-__-____',
+
+      /**
+       * onMatch
+       *
+       * A function to be run on blur if the
+       * input value matches the mask.
+       *
+       * @param {String} The passing string
+       */
+
+      onMatch: function(value) {
+        console.log('Value ' + value + ' matches the input mask.');
+      },
+
+      /**
+       * onFail
+       *
+       * A function to be run on blur if the
+       * input value does not match the mask.
+       */
+
+      onFail: function() {
+        console.log('No match was found for that value.');
+      },
+
+      /**
+       * clearOnFail
+       *
+       * When true, the input field will have its
+       * value cleared on blur if the value does
+       * not match the mask. Defaults to true.
+       */
+
+      clearOnFail: false
+
+    });
+  })();
+  </script>
+
+</body>
+</html>
