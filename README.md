@@ -7,7 +7,7 @@ This is a vanilla JavaScript library for creating masked input fields.
 To apply a mask to a field, you need at minimum an input and a mask string:
 
 ```js
-inputMask(document.querySelector('input'), { mask: '(###) ### - ####' });
+inputMask(document.querySelector('input'), '(###) ### - ####');
 ```
 
 Any characters in your mask that are not identifiers (special characters that map to a specfic set of characters) will be taken as literal and passed over when a user types into the field.

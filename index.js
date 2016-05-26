@@ -283,6 +283,7 @@
    */
 
   function inputMask(el, settings) {
+    if (typeof settings === 'string') settings = { mask: settings };
     if (!settings.placeholder) settings.placeholder = settings.mask;
     if (!settings.mask || typeof settings.mask !== 'string') {
       throw new Error('inputMask called with invalid mask string: ' + settings.mask);
