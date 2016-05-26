@@ -10,7 +10,7 @@ To apply a mask to a field, you need at minimum an input and a mask string:
 inputMask(document.querySelector('input'), '(###) ### - ####');
 ```
 
-Any characters in your mask that are not identifiers (special characters that map to a specfic set of characters) will be taken as literal and passed over when a user types into the field.
+Any characters in your mask that are not identifiers (special characters that map to a specific set of characters) will be taken as literal and passed over when a user types into the field.
 
 The full mask definition API is documented below.
 
