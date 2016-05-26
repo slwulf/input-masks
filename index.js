@@ -220,8 +220,8 @@
       nextPos = findNextIdentifier(this.mask, cursorPos + 1);
     }
 
-    // prevent default for all keys except enter and arrows
-    if ([13, 37, 38, 39, 40].indexOf(keyCode) === -1) {
+    // prevent default for all keys except tab, enter and arrows
+    if ([9, 13, 37, 38, 39, 40].indexOf(keyCode) === -1) {
       event.preventDefault();
     }
 
