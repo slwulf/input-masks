@@ -10,7 +10,9 @@ To apply a mask to a field, you need at minimum an input and a mask string:
 inputMask(document.querySelector('input'), { mask: '(###) ### - ####' });
 ```
 
-The full API is documented below.
+Any characters in your mask that are not identifiers (special characters that map to a specfic set of characters) will be taken as literal and passed over when a user types into the field.
+
+The full mask definition API is documented below.
 
 ```js
 inputMask(document.querySelector('input'), {
@@ -71,4 +73,26 @@ inputMask(document.querySelector('input'), {
   clearOnFail: false
 
 });
+```
+
+### Defining custom identifiers
+
+By default, input masks can be defined with the characters `#` (for numbers) and `a` (for letters). However, you can define your own identifiers as needed:
+
+```js
+inputMask.addIdentifier({ character: '@', match: '[abc123]' });
+
+/**
+ * For the character '@' in your mask, the
+ * characters a, b, c, 1, 2, and 3 will
+ * be allowed. Match strings are case-sensitive.
+ */
+```
+
+Your match string should be a set or range of characters using the "match a single character" regular expression syntax.
+
+You can also remove identifiers, for example if you need to overwrite the default identifiers:
+
+```js
+inputMask.removeIdentifier('#');
 ```

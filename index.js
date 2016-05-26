@@ -161,7 +161,7 @@
    * focusHandler
    *
    * On focus, display the placeholder
-   * and set the cursor position to 
+   * and set the cursor position to
    * the first identifier character.
    */
 
