@@ -3,13 +3,11 @@
   "version": "1.0.0",
   "scripts": {
     "start": "npm run -s build",
-
     "prebuild": "mkdir -p dist",
     "build": "babel index.js -o dist/input-masks.js && npm run -s test:nyan",
     "postbuild": "uglifyjs dist/input-masks.js -o dist/input-masks.min.js --screw-ie8",
-
-    "test": "node indexSpec.js",
-    "test:spec": "npm run -s test | tap-spec",
+    "test": "node test/index.js",
+    "test:summary": "npm run -s test | tap-summary",
     "test:nyan": "npm run -s test | tap-nyan"
   },
   "devDependencies": {
@@ -19,6 +17,7 @@
     "keysim": "^1.3.0",
     "tap-nyan": "0.0.2",
     "tap-spec": "^4.1.1",
+    "tap-summary": "^3.0.1",
     "tape": "^4.6.0",
     "uglify-js": "^2.7.0"
   }
